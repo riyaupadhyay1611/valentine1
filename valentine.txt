@@ -1,0 +1,87 @@
+<html>
+    <body>
+        <div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <h1>Will you be my valentine?</h1>
+            <img id="valentineImage" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.scoopwhoop.com%2Fentertainment%2Fi-want-a-love-story-like-laila-arjun-from-zindagi-na-miledi-dobara%2F&psig=AOvVaw2YFLz8q8NJSTXHALasZqhX&ust=1707925522847000&source=images&cd=vfe&opi=89978449&ved=0CBkQjhxqFwoTCJj_1c3UqIQDFQAAAAAdAAAAABAE" alt="Valentine's Day Image" style="max-width: 300px; height: auto;">
+            <br/>
+            <br/>
+            <br/>
+            <button id="yesButton">Yes</button>
+            <button id="no">No</button>
+        </div>
+
+        <style>
+            body {
+                background: linear-gradient(to bottom, #f5cac3, #f7ede2);
+            }
+            div {
+                text-align: center;
+                vertical-align: middle;
+            }
+            h1 {
+                color: #ff477e;
+            }
+            #yesButton {
+                background-color: #06d6a0;
+                transition: transform 0.3s;
+                margin-right: 10px;
+                width: 120px;
+                font-size: 30px;
+                height: 40px;
+                color: #fff;
+                margin-left: -140px;
+            }
+            #no {
+                position: absolute;
+                background-color: #ef476f;
+                transition: transform 0.3s;
+                margin-left: 10px;
+                width: 120px;
+                /* font-size: 30px; */
+                height: 40px;
+                color: #fff;
+            }
+        </style>
+        <script>
+            document.getElementById("yesButton").addEventListener("click", showAlert);
+
+            function showAlert() {
+                alert("I love you! See you soon <3");
+            }
+
+            var yesButton = document.getElementById("yesButton");
+            var no = document.getElementById("no");
+            var valentineImage = document.getElementById("valentineImage");
+
+            var noTexts = ["Are you sure?", "aisa karega tu mere saath?", "MU request karu chhu", "what if i wear this? :(", "yeh toh you cant say no to", "sexy chikoo hu na mai teri"];
+            var imageSources = ["https://b.zmtcdn.com/data/pictures/1/20708561/44114d68b7d83194856369577486ff69.jpg", "https://i.scdn.co/image/ab67616d00001e02c7b32b2ebd1ed948c9e7e5c5", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fgenius.com%2FKishore-kumar-pal-pal-dil-ke-paas-lyrics%2Fq%2Frelease-date&psig=AOvVaw0T-DUL4jiEI73nBfM54vN2&ust=1707926216723000&source=images&cd=vfe&opi=89978449&ved=0CBcQjRxqFwoTCPC2s5jXqIQDFQAAAAAdAAAAABAE", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.luluandsky.com%2Fsunset-cowl-neck-black-satin-dress.html&psig=AOvVaw2g0wvEUwzXFCjer0aXfxIf&ust=1707925832253000&source=images&cd=vfe&opi=89978449&ved=0CBcQjRxqFwoTCKiymuHVqIQDFQAAAAAdAAAAABAe"];
+
+            no.addEventListener("click", change);
+
+            function change() {
+                var randomIndex = Math.floor(Math.random() * noTexts.length);
+                var randomText = noTexts[randomIndex];
+                no.innerText = randomText;
+
+                var i = Math.floor(Math.random() * 1000) + 1;
+                var j = Math.floor(Math.random() * 700) + 1;
+                no.style.left = i + "px";
+                no.style.top = j + "px";
+
+                var currentWidth = yesButton.offsetWidth;
+                var currentHeight = yesButton.offsetHeight
+                yesButton.style.width = currentWidth + 30 + "px";
+                yesButton.style.height = currentHeight + 10 + "px";
+
+                var randomImageIndex = Math.floor(Math.random() * imageSources.length);
+                valentineImage.src = imageSources[randomImageIndex];
+            }
+        </script>
+    </body>
+</html>
